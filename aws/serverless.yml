@@ -1,0 +1,40 @@
+service: aws-node-cassandra-rest-api
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-2
+  deploymentBucket:
+    name: <change-to-s3-bucket>
+  environment:
+      CONTACT_POINTS: <change-to-public-ip>
+      LOCAL_DC: <change-to-dc-name>
+
+functions:
+  createCatalog:
+    handler: handler.createCatalog 
+    events: 
+      - http:
+          path: catalog/create
+          method: post
+          cors: true
+  addItem:
+    handler: handler.addItem
+    events: 
+      - http:
+          path: catalog/add
+          method: post
+          cors: true
+  getItem:
+    handler: handler.getItem
+    events: 
+      - http:
+          path: catalog/get/{id}
+          method: get
+          cors: true
+
+package:
+  include:
+    - handler.js
+  excludeDevDependencies: false
