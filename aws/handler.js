@@ -9,6 +9,10 @@ const table = 'catalog';
 if (!contactPoints) throw new Error('Environment variable CONTACT_POINTS not set');
 if (!localDataCenter) throw new Error('Environment variable LOCAL_DC not set');
 
+// useful for determining container re-use
+const myuuid = cassandra.types.TimeUuid.now();
+console.log('timeuuid in container startup: ' + myuuid);
+
 const client = new cassandra.Client({
   contactPoints: contactPoints.split(','),
   localDataCenter,
@@ -82,18 +86,18 @@ async function getItem(item_id) {
   };
 }
 
-module.exports.createCatalog = async (event, context) => {
-  context.callbackWaitsForEmptyEventLoop = false;
+module.exports.createCatalog = async (event) => {
+  console.log('timeuuid in createCatalog: ' + myuuid);
   return createSchema();
 };
 
-module.exports.addItem = async (event, context) => {
-  context.callbackWaitsForEmptyEventLoop = false;
+module.exports.addItem = async (event) => {
+  console.log('timeuuid in addItem: ' + myuuid);
   const data = JSON.parse(event.body);
   return addItem(data.item_id, data.name, data.description, data.price);
 };
 
-module.exports.getItem = async (event, context) => {
-  context.callbackWaitsForEmptyEventLoop = false;
+module.exports.getItem = async (event) => {
+  console.log('timeuuid in getItem: ' + myuuid);
   return getItem(event.pathParameters.id);
 };
