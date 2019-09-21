@@ -1,0 +1,41 @@
+service: gcp-node-cassandra-rest-api
+
+provider:
+  name: google
+  stage: dev
+  runtime: nodejs8
+  region: us-central1
+  project: <change-to-project-id>
+  # See the document below for setting up the credentials for GCP and Google Cloud Functions:
+  # https://serverless.com/framework/docs/providers/google/guide/credentials/
+  #
+  # the path to the credentials file needs to be absolute
+  credentials: <change-to-path-to-keyfile-json>
+  environment:
+    CONTACT_POINTS: <change-to-public-ip>
+    LOCAL_DC: <change-to-dc-name>
+
+plugins:
+  - serverless-google-cloudfunctions
+
+functions:
+  createCatalog:
+    handler: createCatalog 
+    events: 
+      # it appears that the path here does not take effect and the endpoint is instead /createCatalog
+      - http: catalog/create
+  addItem:
+    handler: addItem
+    events: 
+      # it appears that the path here does not take effect and the endpoint is instead /addItem
+      - http: catalog/add
+  getItem:
+    handler: getItem
+    events: 
+      # it appears that the path here does not take effect and the endpoint is instead /getItem/{id}
+      - http: catalog/get/{id}
+
+package:
+  include:
+    - index.js
+  excludeDevDependencies: false
