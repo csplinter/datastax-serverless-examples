@@ -1,6 +1,6 @@
-# Cassandra REST API with AWS Lambda in Node.js
+# Prerequisites Setup
+## Cassandra REST API with AWS Lambda in Node.js
 
-## Procedure
 In this example we will manually set up a DataStax Distribution of Apache Cassandra instance in AWS EC2, the same could also be done with Apache Cassandra or DataStax Enterprise.
 
 ### Launch an instance in AWS EC2
