@@ -94,8 +94,7 @@ exports.createCatalog = async (req, res) => {
 
 exports.addItem = async (req, res) => {
   console.log('timeuuid in addItem: ' + myuuid);
-  const data = JSON.parse(JSON.stringify(req.body));
-  const result = await addItem(data.item_id, data.name, data.description, data.price);
+  const result = await addItem(req.body.item_id, req.body.name, req.body.description, req.body.price);
   res.status(result.statusCode).json(JSON.parse(result.body));
 };
 
