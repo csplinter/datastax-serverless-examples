@@ -57,6 +57,6 @@ npm install -g serverless
 3. Follow the instructions for setting up serverless with your AWS Credentials https://serverless.com/framework/docs/providers/aws/guide/credentials/
 
 
-Hope that wasn't too difficult and you are still here, if so now head on over to the main README to run this example.
+Hope that wasn't too difficult and you are still here, if so now head on over to the main [README](README.md) to run this example.
 
 
