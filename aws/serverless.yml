@@ -1,4 +1,4 @@
-service: aws-node-cassandra-rest-api
+service: aws-node-cassandra-http-api
 
 provider:
   name: aws
