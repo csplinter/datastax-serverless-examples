@@ -10,7 +10,7 @@ In this example we will manually set up a DataStax Distribution of Apache Cassan
 3. In the EC2 dashboard, you should see a big blue button that says "Launch Instance", click that.
 4. Next you are prompted to select an AMI, choose "Ubuntu Server 18.04 LTS (HVM), SSD Volume Type".
 5. Next is to select the instance type, choose t2.micro ( it's Free Tier eligable ) and then click on "6: Configure Security Groups" in the top menu, as we will use the defaults for everything else.
-6. On this page, restrict SSH access to your own IP, and then create a Custom TCP Rule allowing traffic on the C* CQL port 9042 to Anywhere. Once this is done, click the "Review and Launch" button in the bottom right. *Note: This is merely for example purposes and this setting should never be deployed for any real use cases".
+6. On this page, restrict SSH access to your own IP, and then create a Custom TCP Rule allowing traffic on the C* CQL port 9042 to Anywhere. Once this is done, click the "Review and Launch" button in the bottom right. **Note: This is simply for example purposes and this security setting should never be deployed for any real use cases**.
 7. Review your configuration and then click "Launch" in the bottom right which will take you to the key pair dialogue.
 8. On the key pair dialogue, select an existing key pair or create a new one and then make sure that you save that in a secure, known location as it will be needed to ssh to the instance.
 9. After that, you should see that the instance is launching, click on the id of your instance to go to its dashboard and copy the Public IP of the instance.
