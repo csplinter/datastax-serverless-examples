@@ -1,0 +1,9 @@
+{
+  "name": "aws-node-cassandra-http-api",
+  "version": "1.0.0",
+  "description": "Example shows how to build a Cassandra REST API with AWS Lambda HTTP Endpoints in Node.js",
+  "author": "DataStax",
+  "dependencies": {
+    "cassandra-driver": "^4.1.0"
+  }
+}
