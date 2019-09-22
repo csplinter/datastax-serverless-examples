@@ -47,10 +47,12 @@ expected output:
 #### addItem
 Note the `-H "Content-Type:application/json"` is required here.
 ```
-curl -X POST -H "Content-Type:application/json" -d '{"item_id": 0, "name": "name_0", "description": "desc_0", "price": 10.1}' https://us-central1-<project-id>.cloudfunctions.net/addItem```
+curl -X POST -H "Content-Type:application/json" -d '{"item_id": 0, "name": "name_0", "description": "desc_0", "price": 10.1}' https://us-central1-<project-id>.cloudfunctions.net/addItem
+```
 expected output:
 ```
-{"query":"INSERT INTO shopping.catalog (item_id, name, description, price) VALUES (?, ?, ?, ?)","item_id":0,"name":"name_0","description":"desc_0","price":10.1}```
+{"query":"INSERT INTO shopping.catalog (item_id, name, description, price) VALUES (?, ?, ?, ?)","item_id":0,"name":"name_0","description":"desc_0","price":10.1}
+```
 #### getItem
 ```
 curl -X GET https://us-central1-<project-id>.cloudfunctions.net/getItem/0
