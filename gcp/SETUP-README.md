@@ -9,7 +9,7 @@ In this example we will manually set up a DataStax Distribution of Apache Cassan
 2. After logging in, create a new project for this example.
 3. Once the project is created, go to the Compute Engine panel via the navigation menu in the top left and select "VM Instances" and click "Create" when available.
 4. Follow the Create VM Instance wizard and change the image to be Ubuntu 18.04 LTS, also go to the Security portion and add your public key so that you can SSH to the instance from your computer.
-5. Once the instance is created, go to the Networking Details to create firewall rules that will allow inbound and outbound TCP traffic on the C* CQL port 9042.
+5. Once the instance is created, go to the Networking Details to create firewall rules that will allow inbound and outbound TCP traffic on the C* CQL port 9042. **Note: This is simply for example purposes and this security setting should never be deployed for any real use cases**.
 
 ### Start the database
 Now that we have an instance running in Google Cloud, we will install and start DDAC on that instance.
