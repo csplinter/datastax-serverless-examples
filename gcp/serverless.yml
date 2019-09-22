@@ -1,4 +1,4 @@
-service: gcp-node-cassandra-rest-api
+service: gcp-node-cassandra-http-api
 
 provider:
   name: google
