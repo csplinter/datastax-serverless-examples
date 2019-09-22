@@ -1,0 +1,50 @@
+service: azure-node-cassandra-rest-api
+
+provider:
+  name: azure
+  runtime: nodejs8.x
+  location: Central US
+  stage: dev
+  environment:
+    CONTACT_POINTS: <change-to-public-ip>
+    LOCAL_DC: <change-to-dc-name>
+
+plugins:
+  - serverless-azure-functions
+
+deploy:
+  runFromBlobUrl: true
+
+package:
+  include:
+    - index.js
+  excludeDevDependencies: false
+
+functions:
+  createCatalog:
+    handler: index.createCatalog 
+    events: 
+      - http: true
+        x-azure-settings:
+          methods:
+            - post
+          route: catalog/create
+          authLevel: anonymous
+  addItem:
+    handler: index.addItem
+    events: 
+      - http: true
+        x-azure-settings:
+          methods:
+            - post
+          route: catalog/add
+          authLevel: anonymous
+  getItem:
+    handler: index.getItem
+    events: 
+      - http: true
+        x-azure-settings:
+          methods:
+            - get
+          route: catalog/get/{id}
+          authLevel: anonymous
