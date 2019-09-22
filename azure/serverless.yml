@@ -1,4 +1,4 @@
-service: azure-node-cassandra-rest-api
+service: azure-node-cassandra-http-api
 
 provider:
   name: azure
