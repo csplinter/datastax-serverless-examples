@@ -8,9 +8,9 @@ Once the above is completed, you will have all of the needed pieces in place to 
 
 ## Project Details
 ### Files
-- handler.js: Contains the Cassandra Driver connection and queries as well as the AWS Lambda function entry points.
-- serverless.yml: Used by serverless to deploy and configure the AWS Lambda artifacts needed to run the function.
-- package.json: Defines the dependencies and descriptive example metadata.
+- [handler.js](handler.js): Contains the Cassandra Driver connection and queries as well as the AWS Lambda function entry points.
+- [serverless.yml](serverless.yml): Used by serverless to deploy and configure the AWS Lambda artifacts needed to run the function.
+- [package.json](package.json): Defines the dependencies and descriptive example metadata.
 
 ## Run it
 1. Clone this repository
@@ -29,6 +29,10 @@ npm install cassandra-driver
 5. From the aws directory, deploy your function. This should output the endpoints that you can use to access the database.
 ```
 sls deploy
+```
+* When you are done, don't forget to clean things up with
+```
+sls remove
 ```
 
 ## Using the HTTP Endpoints
