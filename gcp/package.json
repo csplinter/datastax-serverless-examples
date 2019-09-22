@@ -1,0 +1,10 @@
+{
+  "name": "gcp-node-cassandra-http-api",
+  "version": "1.0.0",
+  "description": "Example shows how to build a Cassandra REST API with Google Cloud Function HTTP Endpoints in Node.js",
+  "author": "Chris Splinter",
+  "dependencies": {
+    "cassandra-driver": "^4.1.0",
+    "serverless-google-cloudfunctions": "^2.3.3"
+  }
+}
