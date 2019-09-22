@@ -1,0 +1,10 @@
+{
+  "name": "azure-node-cassandra-http-api",
+  "version": "1.0.0",
+  "description": "Example shows how to build a Cassandra REST API with Azure Functions HTTP Endpoints in Node.js",
+  "author": "Chris Splinter",
+  "dependencies": {
+    "cassandra-driver": "^4.1.0",
+    "serverless-azure-functions": "^1.0.0"
+  }
+}
