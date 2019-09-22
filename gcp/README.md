@@ -34,6 +34,10 @@ npm install serverless-google-cloudfunctions
 ```
 sls deploy
 ```
+* When you are done, don't forget to clean things up with
+```
+sls remove
+```
 
 ## Using the HTTP Endpoints
 #### createCatalog
