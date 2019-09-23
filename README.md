@@ -1,4 +1,4 @@
-# DataStax Serverless Examples
+# DataStax & Cassandra Serverless Examples
 
 The examples in this repo show how to set up a simple Cassandra REST API in Node.js using serverless functions across clouds.
 
