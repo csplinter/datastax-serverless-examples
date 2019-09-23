@@ -8,9 +8,9 @@ Once the above is completed, you will have all of the needed pieces in place to 
 
 ## Project Details
 ### Files
-- index.js: Contains the Cassandra Driver connection and queries as well as the Google Cloud Function entry points.
-- serverless.yml: Used by serverless to deploy and configure the Google Cloud artifacts needed to run the function.
-- package.json: Defines the dependencies and descriptive example metadata.
+- [index.js](index.js): Contains the Cassandra Driver connection and queries as well as the Google Cloud Function entry points.
+- [serverless.yml](serverless.yml): Used by serverless to deploy and configure the Google Cloud artifacts needed to run the function.
+- [package.json](package.json): Defines the dependencies and descriptive example metadata.
 
 ## Run it
 1. Clone this repository
