@@ -17,12 +17,10 @@ const client = new cassandra.Client({
   contactPoints: contactPoints.split(','),
   localDataCenter,
 
-  // AWS Lambda freezes the function execution context after the callback has been invoked. 
-  // This means that no background activity can occur between lambda invocations, 
-  // including the heartbeat that the driver uses to prevent idle disconnects in some environments.
-  // For this reason, we disable it below.
-  pooling: { heartBeatInterval: 0 }
-
+  // Azure offers Consumption, Premium, and Dedicated plans, depending on the choice it may make sense to disable
+  // heartbeats if the containers are not destined to be long lived. Uncomment the below setting to disable heartbeats.
+  // pooling: { heartBeatInterval: 0 }
+  
   // If trying to reduce Cold Start time, the driver's automatic metadata synchronization and pool warmup can be disabled 
   // isMetadataSyncEnabled: false,
   // pooling: { warmup: false }
