@@ -16,7 +16,7 @@ Cassandra and DataStax do allow for increased portability, as the database itsel
 ## Some Interesting Differences
 
 ### 1. The function entrypoint and response structure varies across the clouds.
-**AWS** - uses `event` and a standard structure for the HTTP response
+**AWS** - uses `event` and a standard structure for the HTTP response ( [go to file](aws/handler.js) )
 ```
 module.exports.createCatalog = async (event) => {
   return createSchema();
@@ -31,7 +31,7 @@ module.exports.getItem = async (event) => {
   return getItem(event.pathParameters.id);
 };
 ```
-**GCP** - uses [expressjs](https://expressjs.com/en/api.html) (req, res)
+**GCP** - uses [expressjs](https://expressjs.com/en/api.html) (req, res) ( [go to file](gcp/index.js) )
 ```
 exports.createCatalog = async (req, res) => {
   const result = await createSchema();
@@ -49,7 +49,7 @@ exports.getItem = async (req, res) => {
   res.status(result.statusCode).json(JSON.parse(result.body));
 };
 ```
-**Azure** - uses a `context` object
+**Azure** - uses a `context` object ( [go to file](azure/index.js) )
 ```
 module.exports.createCatalog = async (context) => {
   const result = await createSchema();
@@ -75,7 +75,7 @@ GCP - requires API enablement and a keyfile ( [documentation](https://serverless
 Azure - requires azure cmd line login and Service Principal ( [documentation](https://github.com/serverless/serverless-azure-functions#advanced-authentication) )
 
 ### 3. The configuration for functions varies quite a bit across clouds in the serverless framework
-**AWS**
+**AWS** ( [go to file](aws/serverless.yml) )
 ```
 functions:
   createCatalog:
@@ -100,7 +100,7 @@ functions:
           method: get
           cors: true
 ```
-**GCP**
+**GCP** ( [go to file](gcp/serverless.yml) )
 ```
 functions:
   createCatalog:
@@ -119,7 +119,7 @@ functions:
       # it appears that the path here does not take effect and the endpoint is instead /getItem/{id}
       - http: catalog/get/{id}
 ```
-**Azure**
+**Azure** ( [go to file](azure/serverless.yml) )
 ```
 functions:
   createCatalog:
